@@ -1,0 +1,31 @@
+package com.internousdev.Wsite.action;
+
+import java.sql.SQLException;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.Wsite.dao.UserCreateCompleteDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserCreateCompleteAction extends ActionSupport implements SessionAware{
+	private String loginUserId;
+	private String loginUserPassword;
+	private String userName;
+	public Map<String,Object> session;
+	private UserCreateCompleteDAO uCCDAO=new UserCreateCompleteDAO();
+	
+	public String execute() throws SQLException{
+		String ret=SUCCESS;
+		
+		uCCDAO.createUser(session.get("loginUserId"),session.get("loginUserPassword"), session.get("userName"));
+		
+		return ret;
+		
+	}
+	
+	
+	public String execute(){
+		return SUCCESS;
+	}
+
+}

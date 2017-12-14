@@ -1,0 +1,8 @@
+package com.internousdev.Wsite.dto;
+
+public class BuyItemDTO {
+	private int id;
+	private String itemName;
+	private String itemPrice;
+
+}

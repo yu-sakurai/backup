@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="&apos;sql&apos; を &apos;WEB-INF&apos; に移動" description="&apos;sql&apos; を &apos;WEB-INF&apos; に移動" destination="WebContent/WEB-INF" element1="build/sql" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1512546541157" updateReferences="true"/>&#x0A;<refactoring comment="&apos;sql&apos; を &apos;web01&apos; に移動" description="&apos;sql&apos; を &apos;web01&apos; に移動" destination="/web01" element1="WebContent/WEB-INF/sql" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1512546547210" updateReferences="true"/>
+</session>

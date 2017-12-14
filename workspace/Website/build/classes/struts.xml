@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- Strutsの詳細設定 -->
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<!-- 対象のpackageを設定 -->
+	<package name="com.internousdev.Website.action" extends="struts-default">
+		<action name="GoTestAction" class="com.internousdev.Website.action.GoTestAction"
+		method="execute">
+			<result name="success">GoTest.jsp</result>
+		</action>
+		
+		<action name="LoginAction" class="com.internousdev.Website.action.LoginAction"
+		method="execute">
+			<result name="success">BuyItem.jsp</result>
+			<result name="error">GoTest.jsp</result>
+		</action>
+		<action name="UserCreateAction" class="com.internousdev.Website.action.UserCreateAction"
+		method="execute">
+			<result name="success">userCreate.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="UserCreateConfirmAction" class="com.internousdev.Website.action.UserCreateConfirmAction"
+		method="execute">
+			<result name="success">userCreateConfirm.jsp</result>
+			<result name="error">userCreate.jsp</result>
+		</action>
+		<action name="UserCreateCompleteAction" class="com.internousdev.Website.action.UserCreateCompleteAction"
+		 method="execute">
+			<result name="success">userCreateComplete.jsp</result>
+		</action>
+		
+		<action name="BuyItemAction" class="com.internousdev.Website.action.BuyItemAction" method="execute">
+			<result name="success">buyItemConfirm.jsp</result>
+			<result name="error">buyItem.jsp</result>
+		</action>
+		<action name="BuyItemConfirmAction" class="com.internousdev.Website.action.BuyItemConfirmAction" method="execute">
+			<result name="success">buyItemComplete.jsp</result>
+		</action>
+		
+		<action name="MyPageAction" class="com.internousdev.Website.action.MyPageAction" method="execute">
+			<result name="success">myPage.jsp</result>
+		</action>
+		
+
+	</package>
+</struts>

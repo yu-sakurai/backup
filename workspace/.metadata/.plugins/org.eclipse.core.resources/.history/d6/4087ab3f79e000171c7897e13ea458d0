@@ -1,0 +1,5 @@
+package com.internousdev.Wsite.action;
+
+public class LoginAction {
+
+}

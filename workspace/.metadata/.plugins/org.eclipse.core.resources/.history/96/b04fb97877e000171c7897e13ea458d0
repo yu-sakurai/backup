@@ -1,0 +1,13 @@
+package com.internousdev.Wsite.dao;
+
+import java.sql.Connection;
+
+import com.internousdev.Wsite.dto.LoginDTO;
+import com.internousdev.Wsite.util.DBConnector;
+
+public class LoginDAO {
+	private DBConnector db=new DBConnector();
+	private Connection con=db.getConnection();
+	private LoginDTO loginDTO=new LoginDTO();
+
+}

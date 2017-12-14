@@ -1,0 +1,27 @@
+package com.internousdev.web.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.internousdev.web.dto.LoginDTO;
+import com.internousdev.web.util.DBConnector;
+
+public class LoginDAO {
+	private String username;
+	private String password;
+	
+	private List<LoginDTO> loginDTO=new ArrayList<LoginDTO>();
+	public  List<LoginDTO> select(String username,String password){
+		DBConnector db=new DBConnector();
+		Connection con=new getConnection();
+		
+	}
+	
+	
+
+}

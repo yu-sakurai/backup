@@ -1,0 +1,36 @@
+package com.internousdev.Website.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.internousdev.Website.dto.BuyItemDTO;
+import com.internousdev.Website.util.DBConnector;
+
+public class BuyItemDAO {
+	private DBConnector dbconnector=new DBConnector();
+	private Connection connection=dbconnector.getConnection();
+	private BuyItemDTO buyItemDTO=new BuyItemDTO();
+	
+	public BuyItemDTO getBuyItemInfo(){
+	String sql="SELECT id,item_name,item_price,item_stock FROM item_info_transaction";
+	
+	try{
+		PreparedStatement ps=connection.prepareStatement(sql);
+		ResultSet rs=ps.executeQuery();
+		
+		if(rs.next()){
+			buyItemDTO.setId(rs.getInt("id"));
+			buyItemDTO.setItemName(rs.getString("item_name"));
+			buyItemDTO.setItemPrice(rs.getInt("item_price"));
+			buyItemDTO.setItemStock(rs.getInt("item_stock"));
+		}
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	return buyItemDTO;
+	}
+	public BuyItemDTO getBuyItemDTO(){
+		return buyItemDTO;
+	}
+}
