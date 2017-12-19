@@ -1,4 +1,4 @@
-package com.internousdev.ecsite.action;
+package com.internousdev.ECsite.action;
 
 import java.util.Map;
 
@@ -6,74 +6,53 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-/**
- *
- * @author internous
- *
- */
-public class UserCreateConfirmAction extends ActionSupport implements SessionAware {
-
-	private String loginUserId;
-
-	private String loginPassword;
-
-	private String userName;
-
+public class UserCreateConfirmAction extends ActionSupport implements SessionAware{
+	private String createUserId;
+	private String createUserPassword;
+	private String createUserName;
 	public Map<String,Object> session;
 
-	private String errorMassage;
+	public String execute(){
+		String result=ERROR;
+		if(!(createUserId.equals(""))&&!(createUserPassword.equals(""))&&!(createUserName.equals(""))){
+			session.put("createUserId",createUserId);
+			session.put("createUserPassword",createUserPassword);
+			session.put("createUserName",createUserName);
 
-	public String execute() {
-
-		String result = SUCCESS;
-
-		if(!(loginUserId.equals("")) && !(loginPassword.equals("")) && !(userName.equals(""))) {
-			session.put("loginUserId", loginUserId);
-			session.put("loginPassword", loginPassword);
-			session.put("userName", userName);
-		} else {
-
-			setErrorMassage("未入力の項目があります。");
-			result = ERROR;
+			result=SUCCESS;
 		}
-
 		return result;
 	}
 
-	public String getLoginUserId() {
-		return loginUserId;
+	public String getCreateUserId() {
+		return createUserId;
 	}
 
-	public void setLoginUserId(String loginUserId) {
-		this.loginUserId = loginUserId;
+	public void setCreateUserId(String createUserId) {
+		this.createUserId = createUserId;
 	}
 
-	public String getLoginPassword() {
-		return loginPassword;
+	public String getCreateUserPassword() {
+		return createUserPassword;
 	}
 
-	public void setLoginPassword(String loginPassword) {
-		this.loginPassword = loginPassword;
+	public void setCreateUserPassword(String createUserPassword) {
+		this.createUserPassword = createUserPassword;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getCreateUserName() {
+		return createUserName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setCreateUserName(String createUserName) {
+		this.createUserName = createUserName;
 	}
 
-	@Override
+
+
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
 
-	public String getErrorMassage() {
-		return errorMassage;
-	}
 
-	public void setErrorMassage(String errorMassage) {
-		this.errorMassage = errorMassage;
-	}
 }

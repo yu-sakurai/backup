@@ -1,37 +1,30 @@
-package com.internousdev.ecsite.dao;
+package com.internousdev.ECsite.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.internousdev.ecsite.util.DBConnector;
-import com.internousdev.ecsite.util.DateUtil;
+import com.internousdev.ECsite.util.DBConnector;
 
 public class UserCreateCompleteDAO {
+	private DBConnector db=new DBConnector();
+	private Connection con=db.getConnection();
 
-	private DBConnector dbConnector = new DBConnector();
+	private String sql="INSERT INTO login_user_transaction (login_id, login_pass, user_name) VALUES(?, ? ,?)";
+	public void createUser(String createUserId,String createUserPassword,String createUserName) throws SQLException{
 
-	private Connection connection = dbConnector.getConnection();
+		try{
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1, createUserId);
+		ps.setString(2, createUserPassword);
+		ps.setString(3, createUserName);
 
-	private DateUtil dateUtil = new DateUtil();
-
-	private String sql = "INSERT INTO login_user_transaction (login_id, login_pass, user_name, insert_date) VALUES(?, ? ,?, ?)";
-
-	public void cerateUser(String loginUserId, String loginUserPassword, String userName) throws SQLException {
-
-		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, loginUserId);
-			preparedStatement.setString(2, loginUserPassword);
-			preparedStatement.setString(3, userName);
-			preparedStatement.setString(4, dateUtil.getDate());
-
-			preparedStatement.execute();
-
-		} catch(Exception e) {
+		ps.execute();
+		}catch(SQLException e){
 			e.printStackTrace();
-		} finally {
-			connection.close();
+		}finally {
+			con.close();
 		}
+
 	}
 }

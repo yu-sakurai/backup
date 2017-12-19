@@ -1,12 +1,3 @@
-Double\ quoted\ string=0,0,0,0,0,204,147,147
-Identifier=0,0,0,0,0,223,190,149
-Keyword=0,0,0,0,0,239,239,175
-Multi-line\ comment=0,0,0,0,0,127,159,127
-Others=0,0,0,0,0,246,243,232
-SQLEditor.executeSelectedSQL.betweenDelimiter.delimiterType=go
-Single\ quoted\ string=0,0,0,0,0,204,147,147
-Single-line\ comment=0,0,0,0,0,127,159,127
-Type=0,0,0,0,0,202,230,130
 eclipse.preferences.version=1
 \u305D\u306E\u4ED6=0,0,0,0,1,0,0,0
 \u30AD\u30FC\u30EF\u30FC\u30C9=1,0,0,0,0,127,0,85

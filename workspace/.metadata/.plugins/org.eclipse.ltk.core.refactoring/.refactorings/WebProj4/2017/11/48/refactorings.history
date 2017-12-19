@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;HelloStrutsAction.java&apos; to &apos;WebProj4/src/com.internousdev.webproj4.action&apos;&#x0D;&#x0A;- 元のプロジェクト: &apos;WebProj4&apos;&#x0D;&#x0A;- 宛先要素: &apos;WebProj4/src/com.internousdev.webproj4.action&apos;&#x0D;&#x0A;- オリジナル要素: &apos;HelloStrutsAction.java&apos;" description="コンパイル単位をコピー" destination="/src&lt;com.internousdev.webproj4.action" element1="/src&lt;{HelloStrutsAction.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1512015312738" units="1" version="1.0"/>
-</session>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="リソース名 &apos;ecshokyu/WebContent/login.jsp&apos; を &apos;home.jsp&apos; に変更します" description="リソース &apos;login.jsp&apos; の名前変更" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/login.jsp" name="home.jsp" stamp="1512354671766" updateReferences="true"/>
-</session>

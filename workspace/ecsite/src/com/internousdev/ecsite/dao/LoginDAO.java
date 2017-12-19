@@ -1,52 +1,41 @@
-package com.internousdev.ecsite.dao;
+package com.internousdev.ECsite.dao;
 
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.internousdev.ECsite.dto.LoginDTO;
+import com.internousdev.ECsite.util.DBConnector;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-import com.internousdev.ecsite.dto.LoginDTO;
-import com.internousdev.ecsite.util.DBConnector;
 
 public class LoginDAO {
+	private DBConnector db=new DBConnector();
+	private Connection con=db.getConnection();
+	private LoginDTO loginDTO=new LoginDTO();
 
-	private DBConnector dbConnector = new DBConnector();
+	public LoginDTO getLoginUserInfo(String loginUserId,String loginPassword){
+		String sql="SELECT * FROM login_user_transaction where login_id = ? AND login_pass = ?";
 
-	private Connection connection = dbConnector.getConnection();
+		try{
+			PreparedStatement ps=con.prepareStatement(sql);
+			ps.setString(1, loginUserId);
+			ps.setString(2, loginPassword);
 
-	private LoginDTO loginDTO = new LoginDTO();
+			ResultSet rs=ps.executeQuery();
 
-	/**
-	 * ログインユーザ情報取得メソッド
-	 *
-	 * @param loginUserId
-	 * @param loginPassword
-	 * @return LoginDTO
-	 */
-	public LoginDTO getLoginUserInfo(String loginUserId, String loginPassword) {
+			if(rs.next()){
+				loginDTO.setLoginUserId(rs.getString("login_id"));
+				loginDTO.setLoginPassword(rs.getString("login_pass"));
 
-		String sql = "SELECT * FROM login_user_transaction where login_id = ? AND login_pass = ?";
 
-		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, loginUserId);
-			preparedStatement.setString(2, loginPassword);
-
-			ResultSet resultSet = preparedStatement.executeQuery();
-
-			if(resultSet.next()) {
-				loginDTO.setLoginId(resultSet.getString("login_id"));
-				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
-				loginDTO.setUserName(resultSet.getString("user_name"));
-
-				if(!(resultSet.getString("login_id").equals(null))) {
+				if(!(rs.getString("login_id").equals(null))){
 					loginDTO.setLoginFlg(true);
 				}
 			}
-
-		} catch(Exception e) {
+		}catch(SQLException e){
 			e.printStackTrace();
 		}
-
 		return loginDTO;
 	}
 
@@ -54,3 +43,5 @@ public class LoginDAO {
 		return loginDTO;
 	}
 }
+
+

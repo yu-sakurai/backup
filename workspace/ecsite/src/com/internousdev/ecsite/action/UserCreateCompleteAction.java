@@ -1,62 +1,68 @@
-package com.internousdev.ecsite.action;
+package com.internousdev.ECsite.action;
 
 import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.ecsite.dao.UserCreateCompleteDAO;
+import com.internousdev.ECsite.dao.UserCreateCompleteDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateCompleteAction extends ActionSupport implements SessionAware{
 
-	private String loginUserId;
+	private String createUserId;
+	private String createUserPassword;
+	private String createUserName;
+	public Map<String ,Object> session;
+	private UserCreateCompleteDAO uccDAO=new UserCreateCompleteDAO();
 
-	private String loginPassword;
-
-	private String userName;
-
-	public Map<String,Object> session;
-
-	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
 
 	public String execute() throws SQLException {
+		uccDAO.createUser(session.get("createUserId").toString(),
+				session.get("createUserPassword").toString(),
+				session.get("createUserName").toString());
 
-		userCreateCompleteDAO.cerateUser(session.get("loginUserId").toString(),
-				session.get("loginPassword").toString(),
-				session.get("userName").toString());
+		return SUCCESS;
 
-		String result = SUCCESS;
-
-		return result ;
 	}
 
-	public String getLoginUserId() {
-		return loginUserId;
+
+	public String getCreateUserId() {
+		return createUserId;
 	}
 
-	public void setLoginUserId(String loginUserId) {
-		this.loginUserId = loginUserId;
+
+	public void setCreateUserId(String createUserId) {
+		this.createUserId = createUserId;
 	}
 
-	public String getLoginPassword() {
-		return loginPassword;
+
+	public String getCreateUserPassword() {
+		return createUserPassword;
 	}
 
-	public void setLoginPassword(String loginPassword) {
-		this.loginPassword = loginPassword;
+
+	public void setCreateUserPassword(String createUserPassword) {
+		this.createUserPassword = createUserPassword;
 	}
 
-	public String getUserName() {
-		return userName;
+
+	public String getCreateUserName() {
+		return createUserName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+
+	public void setCreateUserName(String createUserName) {
+		this.createUserName = createUserName;
 	}
 
-	@Override
+
+
+
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
+
+
 }

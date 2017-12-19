@@ -1,47 +1,39 @@
-package com.internousdev.ecsite.dao;
+package com.internousdev.ECsite.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import com.internousdev.ecsite.dto.BuyItemDTO;
-import com.internousdev.ecsite.util.DBConnector;
+import com.internousdev.ECsite.dto.BuyItemDTO;
+import com.internousdev.ECsite.util.DBConnector;
+
+
 
 public class BuyItemDAO {
+	private DBConnector db=new DBConnector();
+	private Connection con=db.getConnection();
+	private BuyItemDTO buyItemDTO=new BuyItemDTO();
 
-	private DBConnector dbConnector = new DBConnector();
 
-	private Connection connection = dbConnector.getConnection();
+	public BuyItemDTO getBuyItemInfo(){
+	try{
+		String sql="SELECT id, item_name, item_price,item_stock FROM item_info_transaction";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ResultSet rs=ps.executeQuery();
 
-	private BuyItemDTO buyItemDTO = new BuyItemDTO();
-
-	/**
-	 * 商品情報取得メソッド
-	 *
-	 * @return BuyItemDTO
-	 */
-	public BuyItemDTO getBuyItemInfo() {
-
-		String sql = "SELECT id, item_name, item_price FROM item_info_transaction";
-
-		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			ResultSet resultSet = preparedStatement.executeQuery();
-
-			if(resultSet.next()) {
-				buyItemDTO.setId(resultSet.getInt("id"));
-				buyItemDTO.setItemName(resultSet.getString("item_name"));
-				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
-			}
-
-		} catch(Exception e) {
-			e.printStackTrace();
+		if(rs.next()){
+			buyItemDTO.setId(rs.getInt("id"));
+			buyItemDTO.setItemName(rs.getString("item_name"));
+			buyItemDTO.setItemPrice(rs.getString("item_price"));
+			buyItemDTO.setItemStock(rs.getInt("item_stock"));
 		}
-
-		return buyItemDTO;
+	}catch(SQLException e){
+		e.printStackTrace();
 	}
-
-	public BuyItemDTO getBuyItemDTO() {
+	return buyItemDTO;
+	}
+	public BuyItemDTO geBuyItemDTO(){
 		return buyItemDTO;
 	}
 }

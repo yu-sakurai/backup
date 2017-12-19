@@ -1,81 +1,40 @@
-package com.internousdev.ecsite.action;
+package com.internousdev.ECsite.action;
 
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.ecsite.dao.BuyItemDAO;
-import com.internousdev.ecsite.dao.LoginDAO;
-import com.internousdev.ecsite.dto.BuyItemDTO;
-import com.internousdev.ecsite.dto.LoginDTO;
+import com.internousdev.ECsite.dao.BuyItemDAO;
+import com.internousdev.ECsite.dao.LoginDAO;
+import com.internousdev.ECsite.dto.BuyItemDTO;
+import com.internousdev.ECsite.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-/**
- * ログイン認証処理
- * Login.jspからログインID、ログインパスワードを受け取り
- * DBへ問い合わせを行います。
- *
- * @author internous
- * @param loginUserId
- * @param loginPassword
- *
- * @return result
- */
 public class LoginAction extends ActionSupport implements SessionAware{
-
-	/**
-	 * ログインID
-	 */
 	private String loginUserId;
-
-	/**
-	 * ログインパスワード
-	 */
 	private String loginPassword;
+	public Map<String,Object> session;
+	private LoginDTO loginDTO=new LoginDTO();
+	private LoginDAO loginDAO=new LoginDAO();
+	private BuyItemDAO buyItemDAO=new BuyItemDAO();
 
-	/**
-	 * ログイン情報を格納
-	 */
-	public Map<String, Object> session;
 
-	/**
-	 * ログイン情報取得DAO
-	 */
-	private LoginDAO loginDAO = new LoginDAO();
+	public String execute(){
+		String result=ERROR;
 
-	/**
-	 * ログイン情報格納IDTO
-	 */
-	private LoginDTO loginDTO = new LoginDTO();
+		loginDTO= loginDAO.getLoginUserInfo(loginUserId, loginPassword);
+		session.put("loginUser",loginDTO);
 
-	/**
-	 * アイテム情報を取得
-	 */
-	private BuyItemDAO buyItemDAO = new BuyItemDAO();
-
-	/**
-	 * 実行メソッド
-	 */
-	public String execute() {
-
-		String result = ERROR;
-
-		// ログイン実行
-		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
-
-		session.put("loginUser", loginDTO);
-
-		// ログイン情報を比較
-		if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
-			result = SUCCESS;
-
-			// アイテム情報を取得
-			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
-			session.put("login_user_id",	loginDTO.getLoginId());
+		if(((LoginDTO) session.get("loginUser")).getLoginFlg()){
+			session.put("loginId",loginUserId);
+			session.put("loginUserPassword", loginPassword);
+			BuyItemDTO buyItemDTO=buyItemDAO.getBuyItemInfo();
 			session.put("id", buyItemDTO.getId());
 			session.put("buyItem_name", buyItemDTO.getItemName());
 			session.put("buyItem_price", buyItemDTO.getItemPrice());
+			session.put("buyItem_stock", buyItemDTO.getItemStock());
 
+			result=SUCCESS;
 			return result;
 		}
 
@@ -98,8 +57,29 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		this.loginPassword = loginPassword;
 	}
 
-	@Override
+
+
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
+	public LoginDTO getLoginDTO() {
+		return loginDTO;
+	}
+
+	public void setLoginDTO(LoginDTO loginDTO) {
+		this.loginDTO = loginDTO;
+	}
+
+	public LoginDAO getLoginDAO() {
+		return loginDAO;
+	}
+
+	public void setLoginDAO(LoginDAO loginDAO) {
+		this.loginDAO = loginDAO;
+	}
+
+
+
+
 }

@@ -1,4 +1,4 @@
-package com.internousdev.ecsite.util;
+package com.internousdev.ECsite.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
