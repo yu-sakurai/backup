@@ -1,0 +1,17 @@
+package com.internousdev.ECsite.dao;
+
+import java.sql.Connection;
+
+import com.internousdev.ECsite.dto.ExhibitorLoginDTO;
+import com.internousdev.ECsite.util.DBConnector;
+
+public class ExhibitorLoginDAO {
+	private DBConnector db=new DBConnector();
+	private Connection con=db.getConnection();
+	private ExhibitorLoginDTO dto=new ExhibitorLoginDTO();
+
+	public ExhibitorLoginDTO getExhibitorInfo(String loginUserId,String loginPassword){
+		public String sql="SELECT * FROM login_exhibitor_transaction where login_id = ? AND login_pass = ?";
+
+	}
+}

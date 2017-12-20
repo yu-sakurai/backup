@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript"></script>
 </head>
 <body>
 	<h3>SUCCESS</h3>
@@ -18,11 +19,18 @@
 		<s:property value="session.buyItem_price"/><br>
 		<s:property value="session.buyItem_stock"/><br>
 
+		<select name="count">
+							<option value="1" selected="selected">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+		</select>
+
 
 			<%-- <select name="count">
 				<option value="a">選択してください</option>
-					<script type="text/javaScript" language="javaScript">
-					<%@ taglib prefix="s" uri="/struts-tags" %>
+					<script>
 					for(var i=0;i<=<s:property value="session.buyItem_stock"/>;i++){
 					document.write("<option value='z'>");
 					document.write(i);

@@ -13,7 +13,8 @@
 		<s:password name="loginPassword"/>
 		<s:submit value="LOGIN"/>
 	</s:form>
-	<a href='<s:url action="UserCreateAction"/>'>HERE</a>
+	<a href='<s:url action="UserCreateAction"/>'>User Create</a>
+	<a href='<s:url action="ExhibitorAction"/>'>出品者ログイン画面</a>
 
 
 </body>

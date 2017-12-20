@@ -1,0 +1,18 @@
+package com.internousdev.ECsite.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class NewItemConfirmAction extends ActionSupport{
+	private String itemName;
+	private String itemStock;
+	private String itemPrice;
+
+	public String execute(){
+		String ret= SUCCESS;
+
+		if
+
+		return ret;
+	}
+
+}

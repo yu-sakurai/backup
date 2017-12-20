@@ -1,0 +1,23 @@
+package com.internousdev.ECsite.action;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class NewItemConfirmAction extends ActionSupport implements SessionAware{
+	private String itemName;
+	private String itemStock;
+	private String itemPrice;
+	public Map<String,Object> session;
+
+	public String execute(){
+		String ret= SUCCESS;
+
+		if(!(itemName.equals("")&&!(itemStock.equals("")&&!(itemPrice.equals(""))){
+			se
+		}
+
+		return ret;
+	}
+
+}

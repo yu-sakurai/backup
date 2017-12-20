@@ -14,6 +14,7 @@
 		<s:property value="session.total_price"/><br>
 		<s:property value="session.count"/><br>
 		<s:property value="session.pay"/><br>
+		<s:property value="session.total_price"/><br>
 		<s:submit value="COMPLETE"/>
 	</s:form>
 </body>

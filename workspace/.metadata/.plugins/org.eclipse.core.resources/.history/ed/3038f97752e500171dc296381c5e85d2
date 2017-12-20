@@ -1,0 +1,31 @@
+package com.internousdev.ECsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ECsite.dao.ExhibitorLoginDAO;
+import com.internousdev.ECsite.dto.ExhibitorLoginDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ExhibitorLoginAction extends ActionSupport implements SessionAware{
+	private String loginUserId;
+	private String loginPassword;
+	public Map<String,Object> session;
+	private ExhibitorLoginDAO exDAO=new ExhibitorLoginDAO();
+	private ExhibitorLoginDTO exDTO=new ExhibitorLoginDTO();
+
+	public String execute(){
+		String result=ERROR;
+
+		exDTO=exDAO.getExhibitorInfo(loginUserId, loginPassword);
+		session.put("loginUser",exDTO);
+
+		if(((ExhibitorLoginDTO) session.get("loginUser")).getLoginFlg()){
+			result=SUCCESS;
+		}
+
+		return result;
+	}
+
+}

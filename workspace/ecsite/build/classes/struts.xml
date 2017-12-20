@@ -45,6 +45,26 @@
 			<result name="success">myPage.jsp</result>
 			<result name="error">home.jsp</result>
 		</action>
+		<action name="NewItemConfirmAction" class="com.internousdev.ECsite.action.NewItemConfirmAction" method="execute">
+			<result name="success">newItemConfirm.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+
+		<action name="ExhibitorAction" class="com.internousdev.ECsite.action.ExhibitorAction" method="execute">
+			<result name="success">exhibitorLogin.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<action name="ExhibitorLoginAction" class="com.internousdev.ECsite.action.ExhibitorLoginAction" method="execute">
+			<result name="success">exhibit.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<action name="NewItemAction" class="com.internousdev.ECsite.action.NewItemAction" method="execute">
+			<result name="success">newItem.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
 
 	</package>
 </struts>

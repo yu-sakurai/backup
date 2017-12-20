@@ -1,0 +1,18 @@
+package com.internousdev.ECsite.dao;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.internousdev.ECsite.dto.MyPageDTO;
+import com.internousdev.ECsite.util.DBConnector;
+
+public class MyPageDAO {
+	private DBConnector db=new DBConnector();
+	private Connection con=db.getConnection();
+
+	public ArrayList<MyPageDTO> getMypageUserInfo(String item_transaction_id, String user_master_id)throws SQLException{
+		ArrayList<MyPageDTO> myPageDTO=new ArrayList<MyPageDTO>();
+	}
+
+}

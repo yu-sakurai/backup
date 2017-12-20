@@ -1,0 +1,31 @@
+package com.internousdev.ECsite.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.internousdev.ECsite.dto.ExhibitorLoginDTO;
+import com.internousdev.ECsite.util.DBConnector;
+
+public class ExhibitorLoginDAO {
+	private DBConnector db=new DBConnector();
+	private Connection con=db.getConnection();
+	private ExhibitorLoginDTO dto=new ExhibitorLoginDTO();
+
+	public ExhibitorLoginDTO getExhibitorInfo(String loginUserId,String loginPassword){
+		public String sql="SELECT * FROM login_exhibitor_transaction where login_id = ? AND login_pass = ?";
+
+		try{
+			PreparedStatement ps=con.prepareStatement(sql);
+			ps.setString(1, loginUserId);
+			ps.setString(2, loginPassword);
+
+			ResultSet rs=ps.executeQuery();
+
+			while(rs.next()){
+				dto.setLoginUserId(rs.getString("login_id"));
+				dto.setLoginPassword(rs.getString("login_pass"));
+			}
+		}
+	}
+}
