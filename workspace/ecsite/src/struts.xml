@@ -65,6 +65,14 @@
 			<result name="success">newItem.jsp</result>
 			<result name="error">home.jsp</result>
 		</action>
+		<action name="NewItemCompleteAction" class="com.internousdev.ECsite.action.NewItemCompleteAction" method="execute">
+			<result name="success">newItemComplete.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="KonyuAction" class="com.internousdev.ECsite.action.KonyuAction" method="execute">
+			<result name="success">konyu.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
 
 	</package>
 </struts>

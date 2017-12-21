@@ -1,0 +1,12 @@
+package com.internousdev.ECsite.action;
+
+import com.internousdev.ECsite.dao.NewItemCompleteDAO;
+
+public class NewItemCompleteAction {
+	private String itemName;
+	private String itemPrice;
+	private String itemStock;
+	public Map<String ,Object> session;
+	private NewItemCompleteDAO nICDAO=new NewItemCompleteDAO();
+
+}

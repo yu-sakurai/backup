@@ -13,6 +13,7 @@
 		<s:property value="session.itemName"/>
 		<s:property value="session.itemPrice"/>円<br>
 		<s:property value="session.itemStock"/>個<br>
+		<s:submit value="COMP"/>
 	</s:form>
 </body>
 </html>

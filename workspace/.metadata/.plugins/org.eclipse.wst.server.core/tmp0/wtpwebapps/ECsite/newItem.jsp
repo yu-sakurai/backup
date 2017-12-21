@@ -9,9 +9,9 @@
 </head>
 <body>
 	<s:form action="NewItemConfirmAction">
-		<s:textfield name="itemName"/>
-		<s:textfield name="itemPrice"/>円<br>
-		<s:textfield name="itemStock"/>個<br>
+		<s:textfield name="itemName" placeholder="商品名を入力してください"/>
+		<s:textfield name="itemPrice" placeholder="価格を入力してください"/><br>
+		<s:textfield name="itemStock" placeholder="在庫数を入力してください"/><br>
 		<s:submit value="CONFIRM"/>
 	</s:form>
 

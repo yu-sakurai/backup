@@ -1,0 +1,24 @@
+package com.internousdev.ECsite.action;
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ECsite.dao.NewItemCompleteDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class NewItemCompleteAction extends ActionSupport implements SessionAware{
+	private String itemName;
+	private String itemPrice;
+	private String itemStock;
+	public Map<String ,Object> session;
+	private NewItemCompleteDAO nICDAO=new NewItemCompleteDAO();
+
+	public String execute() throws SQLException{
+		nICDAO.NewItem(session.get("itemName"),
+				session.get("itemPrice"),
+				session.get("itemStock"),
+	}
+
+}

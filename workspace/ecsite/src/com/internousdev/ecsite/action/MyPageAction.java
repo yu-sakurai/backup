@@ -19,7 +19,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	private String msg;
 
 	public String execute() throws SQLException{
-		String ret=ERROR;
+		String ret=SUCCESS;
 
 		if(session.containsKey("id")){
 			ret=ERROR;
