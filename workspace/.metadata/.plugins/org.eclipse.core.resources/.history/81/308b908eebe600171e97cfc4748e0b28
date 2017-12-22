@@ -1,0 +1,29 @@
+package com.internousdev.ECsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ECsite.dao.BuyCompDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyCompAction extends ActionSupport implements SessionAware{
+	public Map<String, Object> session;
+	private BuyCompDAO buyCompDAO=new BuyCompDAO();
+
+	public String execute(){
+		String ret=SUCCESS;
+
+		buyCompDAO.buyInfo(
+				session.get("id").toString(),
+				session.get("total_price").toString(),
+				session.get("count").toString());
+
+
+
+
+
+		return ret;
+	}
+
+}

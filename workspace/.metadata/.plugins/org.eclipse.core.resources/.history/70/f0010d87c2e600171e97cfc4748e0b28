@@ -1,0 +1,15 @@
+package com.internousdev.ECsite.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyAction extends ActionSupport{
+	private String itemName;
+	private String itemPrice;
+	private String itemStock;
+	private String count;
+
+	public String execute(){
+		return SUCCESS;
+	}
+
+}

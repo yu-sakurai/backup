@@ -25,7 +25,7 @@
 					<td><s:property value="itemName" /></td>
 					<td><s:property value="itemPrice" /><span>円</span></td>
 					<td><s:property value="itemStock" /><span>個</span></td>
-					<td><a href='<s:url action="BuyItemConfirmAction"/>'>購入はこちら</a></td>
+					<td><a href='<s:url action="BuyAction"><s:param name="id" value="id" ></s:param></s:url>'>購入はこちら</a></td>
 					<td><select name="count">
 						<option value="a" selected="selected">選択してください</option>
 							<script type="text/javascript" language="javascript">

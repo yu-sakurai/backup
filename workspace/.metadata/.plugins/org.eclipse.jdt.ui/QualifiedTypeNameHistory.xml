@@ -20,4 +20,6 @@
 <fullyQualifiedTypeName name="com.internousdev.ECsite.util.DBConnector"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
+<fullyQualifiedTypeName name="com.internousdev.ECsite.dao.BuyItemDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.ECsite.dto.BuyItemDTO"/>
 </qualifiedTypeNameHistroy>

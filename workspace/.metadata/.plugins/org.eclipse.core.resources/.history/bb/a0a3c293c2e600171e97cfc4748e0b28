@@ -1,0 +1,20 @@
+package com.internousdev.ECsite.action;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyAction extends ActionSupport implements SessionAware{
+	private String itemName;
+	private String itemPrice;
+	private String itemStock;
+	private String count;
+	public Map<String,Object> session;
+	public String execute(){
+		String ret=SUCCESS;
+
+		session.put()
+		return SUCCESS;
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.internousdev.ECsite.action;
+
+public class BuyConfirmAction {
+	private int count;
+	public Map<String,Object> session;
+
+	public String execute(){
+		String ret=SUCCESS;
+	}
+}

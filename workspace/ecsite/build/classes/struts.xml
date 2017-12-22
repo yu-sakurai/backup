@@ -73,6 +73,18 @@
 			<result name="success">konyu.jsp</result>
 			<result name="error">home.jsp</result>
 		</action>
+		<action name="BuyAction" class="com.internousdev.ECsite.action.BuyAction" method="execute">
+			<result name="success">buy.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="BuyConfirmAction" class="com.internousdev.ECsite.action.BuyConfirmAction" method="execute">
+			<result name="success">buyConfirm.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="BuyCompAction" class="com.internousdev.ECsite.action.BuyCompAction" method="execute">
+			<result name="success">buyComp.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
 
 	</package>
 </struts>
