@@ -1,0 +1,17 @@
+package com.internousdev.ECsite.action;
+
+import org.apache.struts2.components.File;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ImgAction extends ActionSupport{
+
+	    private static final long serialVersionUID = 1L;
+	    private File myfile;
+	    public String execute() {
+	        System.out.println(myfile);
+	        return SUCCESS;
+	    }
+
+
+

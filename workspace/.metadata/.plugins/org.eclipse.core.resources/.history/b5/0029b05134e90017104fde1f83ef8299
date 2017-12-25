@@ -1,0 +1,25 @@
+package com.internousdev.ECsite.action;
+
+import org.apache.struts2.components.File;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ImgAction extends ActionSupport{
+
+	private File imgFile;
+	public String execute(){
+		System.out.println(imgFile);
+
+		String ret=SUCCESS;
+		return ret;
+	}
+	public File getImgFile() {
+		return imgFile;
+	}
+	public void setImgFile(File imgFile) {
+		this.imgFile = imgFile;
+	}
+
+
+
+}

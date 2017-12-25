@@ -12,5 +12,7 @@
 		<s:submit value="HOME"/>
 	</s:form>
 
+
+
 </body>
 </html>

@@ -26,7 +26,7 @@
 					<td><s:property value="itemPrice" /><span>円</span></td>
 					<td><s:property value="itemStock" /><span>個</span></td>
 					<td><a href='<s:url action="BuyAction"><s:param name="id" value="id" ></s:param></s:url>'>購入はこちら</a></td>
-					<td><select name="count">
+					<%-- <td><select name="count">
 						<option value="a" selected="selected">選択してください</option>
 							<script type="text/javascript" language="javascript">
 							for(var i=0;i<=<s:property value="itemStock" /> ;i++){
@@ -36,7 +36,7 @@
 							}
 					</script>
 					</select>
-					</td>
+					</td> --%>
 				</tr>
 			</s:iterator>
 	</table>
@@ -69,5 +69,14 @@
 		<s:submit value="CONFIRME"/>
 	</s:form>
 	<a href='<s:url action="MyPageAction"/>'>MyPAGE</a>
+	<s:form action="SerchAction">
+		<s:textfield name="serchWord"/>
+		<s:submit value="SERCH"/>
+	</s:form>
+
+
+
+
+
 </body>
 </html>

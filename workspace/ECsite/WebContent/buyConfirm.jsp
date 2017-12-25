@@ -13,6 +13,14 @@
 
 			<s:submit value="COMP"/>
 		</s:form>
+		<s:form action="BuyItemConfirmAction">
+		<s:property value="session.item_name"/><br>
+		<s:property value="session.total_price"/><br>
+		<s:property value="session.itemCount"/><br>
+
+		<s:property value="session.total_price"/><br>
+		<s:submit value="COMPLETE"/>
+	</s:form>
 
 </body>
 </html>

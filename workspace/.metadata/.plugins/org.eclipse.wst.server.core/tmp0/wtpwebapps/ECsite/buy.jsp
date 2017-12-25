@@ -17,7 +17,7 @@
 					<td><s:property value="#session.item_stock" /><span>個</span></td>
 
 					<%-- <td><a href='<s:url action="BuyAction"/>'>購入はこちら</a></td> --%>
-					<td><select name="item_count">
+					<td><select name="itemCounts">
 						<option value="a" selected="selected">選択してください</option>
 							<script type="text/javascript" language="javascript">
 							for(var i=0;i<=<s:property value="#session.item_stock" /> ;i++){

@@ -1,0 +1,6 @@
+package com.internousdev.ECsite.dto;
+
+public class SerchDTO {
+	private String serchWord;
+
+}

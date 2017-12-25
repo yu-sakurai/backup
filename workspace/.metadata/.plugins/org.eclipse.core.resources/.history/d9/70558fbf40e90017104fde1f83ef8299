@@ -1,0 +1,18 @@
+package com.internousdev.ECsite.action;
+
+import org.apache.struts2.components.File;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ImgAction extends ActionSupport{
+
+	private File fileUpload;
+	private String fileUploadContentType;
+	private String fileUploadFileName;
+	return SUCCESS;
+
+
+
+}
+
+

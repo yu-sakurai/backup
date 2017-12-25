@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- Strutsの詳細設定 -->
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<!-- 対象のpackageを設定 -->
+	<package name="com.internousdev.ECsite.action" extends="struts-default">
+
+		<!-- GoHomeAction -->
+		<action name="HomeAction" class="com.internousdev.ECsite.action.HomeAction" method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+		<action name="LoginAction" class="com.internousdev.ECsite.action.LoginAction" method="execute">
+			<result name="success">buyItem.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<action name="BuyItemAction" class="com.internousdev.ECsite.action.BuyItemAction" method="execute">
+			<result name="success">buyItemConfirm.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<action name="BuyItemConfirmAction" class="com.internousdev.ECsite.action.BuyItemConfirmAction" method="execute">
+			<result name="success">buyItemComplete.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<action name="UserCreateAction" class="com.internousdev.ECsite.action.UserCreateAction" method="execute">
+			<result name="success">userCreateAction.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<action name="UserCreateConfirmAction" class="com.internousdev.ECsite.action.UserCreateConfirmAction" method="execute">
+			<result name="success">userCreateConfirm.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="UserCreateCompleteAction" class="com.internousdev.ECsite.action.UserCreateCompleteAction" method="execute">
+			<result name="success">userCreateComplete.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="MyPageAction" class="com.internousdev.ECsite.action.MyPageAction" method="execute">
+			<result name="success">myPage.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="NewItemConfirmAction" class="com.internousdev.ECsite.action.NewItemConfirmAction" method="execute">
+			<result name="success">newItemConfirm.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+
+		<action name="ExhibitorAction" class="com.internousdev.ECsite.action.ExhibitorAction" method="execute">
+			<result name="success">exhibitorLogin.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<action name="ExhibitorLoginAction" class="com.internousdev.ECsite.action.ExhibitorLoginAction" method="execute">
+			<result name="success">exhibit.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<action name="NewItemAction" class="com.internousdev.ECsite.action.NewItemAction" method="execute">
+			<result name="success">newItem.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="NewItemCompleteAction" class="com.internousdev.ECsite.action.NewItemCompleteAction" method="execute">
+			<result name="success">newItemComplete.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="KonyuAction" class="com.internousdev.ECsite.action.KonyuAction" method="execute">
+			<result name="success">konyu.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="BuyAction" class="com.internousdev.ECsite.action.BuyAction" method="execute">
+			<result name="success">buy.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="BuyConfirmAction" class="com.internousdev.ECsite.action.BuyConfirmAction" method="execute">
+			<result name="success">buyConfirm.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="BuyCompAction" class="com.internousdev.ECsite.action.BuyCompAction" method="execute">
+			<result name="success">buyComp.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<action name="SerchAction" class="com.internousdev.ECsite.action.SerchAction" method="execute">
+			<result name="success">serch.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+		<!-- <action name="ImgAction" class="com.internousdev.ECsite.action.ImgAction" method="execute">
+			<result name="success">img.jsp</result>
+			<result name="error">home.jsp</result>
+		</action> -->
+
+		<action name="ImgAction" class="com.internousdev.ECsite.action.ImgAction" method="execute">
+    		<interceptor-ref name="basicStack"/>
+    		<interceptor-ref name="fileUpload">
+        		<param name="maximumSize">500000</param>
+        		<param name="allowedTypes">image/jpeg,image/gif</param>
+    		</interceptor-ref>
+    		<interceptor-ref name="validation"/>
+    		<interceptor-ref name="workflow"/>
+    	<result name="success">img.jsp</result>
+		</action>
+
+	</package>
+</struts>

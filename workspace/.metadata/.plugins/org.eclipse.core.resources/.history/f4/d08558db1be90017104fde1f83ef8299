@@ -1,0 +1,18 @@
+package com.internousdev.ECsite.action;
+
+import com.internousdev.ECsite.dao.SerchDAO;
+import com.internousdev.ECsite.dto.SerchDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class SerchAction extends ActionSupport{
+	private String serchWord;
+	private SerchDTO serchDTO=new SerchDTO();
+	private SerchDAO serchDAO=new SerchDAO();
+
+	public String execute(){
+		String ret=SUCCESS;
+		return ret;
+
+	}
+
+}

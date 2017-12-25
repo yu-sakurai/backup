@@ -14,6 +14,10 @@
 		<s:textfield name="itemStock" placeholder="在庫数を入力してください"/><br>
 		<s:submit value="CONFIRM"/>
 	</s:form>
+	<%-- <s:form action="ImgAction" method="post" enctype="multipart/formdata">
+		<input type="file" name="imgFile" />
+		<s:submit value="SUBMIT"/>
+	</s:form> --%>
 
 </body>
 </html>

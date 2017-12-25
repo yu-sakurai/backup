@@ -18,7 +18,7 @@ public class BuyCompAction extends ActionSupport implements SessionAware{
 		buyCompDAO.buyInfo(
 				session.get("id").toString(),
 				session.get("total_price").toString(),
-				session.get("count").toString());
+				session.get("itemCount").toString());
 
 
 
@@ -42,6 +42,6 @@ public class BuyCompAction extends ActionSupport implements SessionAware{
 	public void setBuyCompDAO(BuyCompDAO buyCompDAO) {
 		this.buyCompDAO = buyCompDAO;
 	}
-	
+
 
 }
