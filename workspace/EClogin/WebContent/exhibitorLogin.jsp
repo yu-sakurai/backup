@@ -8,19 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<s:form action="LoginAction">
+	<s:form action="ExhibitorLoginAction">
 		<s:textfield name="loginUserId"/>
 		<s:password name="loginPassword"/>
 		<s:submit value="LOGIN"/>
 	</s:form>
-	<a href='<s:url action="UserCreateAction"/>'>User Create</a>
-	<a href='<s:url action="ExhibitorAction"/>'>出品者ログイン画面</a>
 
-<!-- <img src="./img/Chrysanthemum.jpg" alt="菊" title="菊"> -->
-	<form action = "ImgAction" method = "post" enctype = "multipart/form-data">
-         <label for = "myFile">Upload your file</label>
-    	<s:file name="userImage" label="User Image"/>
-    	<s:submit value="Upload"/>
-    </form>
 </body>
 </html>

@@ -1,0 +1,57 @@
+package com.internousdev.ECsite.action;
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ECsite.dao.BuyCompDAO;
+import com.internousdev.ECsite.dao.StockUpdateDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyCompAction extends ActionSupport implements SessionAware{
+	public Map<String, Object> session;
+	private BuyCompDAO buyCompDAO=new BuyCompDAO();
+	private StockUpdateDAO sUDDAO=new StockUpdateDAO();
+
+	public String execute() throws SQLException{
+		String ret=SUCCESS;
+
+		buyCompDAO.buyInfo(
+				session.get("id").toString(),
+				session.get("total_price").toString(),
+				session.get("itemCount").toString());
+
+
+
+		sUDDAO.stockUpdate(
+				session.get("id").toString(),
+				session.get("item_stock").toString(),
+				session.get("itemCount").toString());
+
+
+
+
+
+
+		return ret;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+	public BuyCompDAO getBuyCompDAO() {
+		return buyCompDAO;
+	}
+
+	public void setBuyCompDAO(BuyCompDAO buyCompDAO) {
+		this.buyCompDAO = buyCompDAO;
+	}
+
+
+}
