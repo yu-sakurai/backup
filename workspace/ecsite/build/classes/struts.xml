@@ -95,21 +95,18 @@
 		</action> -->
 
 		<action name="ImgAction" class="com.internousdev.ECsite.action.ImgAction" method="execute">
-    		<interceptor-ref name="exception"/>
-            <interceptor-ref name="i18n"/>
-            <interceptor-ref name="fileUpload">
-       		<param name="allowedTypes">text/plain</param>
-       		<param name="maximumSize">10240</param>
-  	    </interceptor-ref>
-            <interceptor-ref name="params">
-                <param name="excludeParams">dojo\..*,^struts\..*</param>
-            </interceptor-ref>
-            <interceptor-ref name="validation">
-                <param name="excludeMethods">input,back,cancel,browse</param>
-            </interceptor-ref>
-            <interceptor-ref name="workflow">
-                <param name="excludeMethods">input,back,cancel,browse</param>
-            </interceptor-ref>
+			<!-- interceptor-ref name = "basicStack"/>
+   			<interceptor-ref name = "fileUpload">
+      		<param name = "allowedTypes">image/jpeg,image/gif</param>
+   			</interceptor-ref> -->
+   			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg,image/pjpeg
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+
     	<result name="success">img.jsp</result>
 		</action>
 

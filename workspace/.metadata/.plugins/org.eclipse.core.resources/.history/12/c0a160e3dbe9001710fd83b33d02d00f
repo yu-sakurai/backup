@@ -1,0 +1,16 @@
+package com.internousdev.ECsite.action;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.components.File;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ImgAction extends ActionSupport{
+
+
+}
+
+

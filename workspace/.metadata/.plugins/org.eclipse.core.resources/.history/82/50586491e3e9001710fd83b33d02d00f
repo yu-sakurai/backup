@@ -1,0 +1,13 @@
+package com.internousdev.ECsite.action;
+
+import org.apache.struts2.interceptor.ServletRequestAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ImgAction extends ActionSupport implements ServletRequestAware{
+
+	}
+
+
+
+

@@ -17,9 +17,10 @@
 	<a href='<s:url action="ExhibitorAction"/>'>出品者ログイン画面</a>
 
 <!-- <img src="./img/Chrysanthemum.jpg" alt="菊" title="菊"> -->
-		<s:form action="ImgAction" namespace="/" method="post" enctype="multipart/form-data">
-			<s:file name="fileUpload" label="Select a File to upload" size="40"/>
-			<s:submit value="UPLOAD"/>
-		</s:form>
+	<form action = "ImgAction" method = "post" enctype = "multipart/form-data">
+         <label for = "myFile">Upload your file</label>
+    	<s:file name="userImage" label="User Image"/>
+    	<s:submit value="Upload"/>
+    </form>
 </body>
 </html>

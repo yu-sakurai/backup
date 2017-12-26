@@ -9,17 +9,16 @@
 </head>
 <body>
 	<h3>SUCCESS</h3>
-	<h2>
-   File Name : <s:property value="fileUploadFileName"/>
-</h2>
-
-<h2>
-   Content Type : <s:property value="fileUploadContentType"/>
-</h2>
-
-<h2>
-   File : <s:property value="fileUpload"/>
-</h2>
+		<h2>Struts2 File Upload Example</h2>
+	User Image: <s:property value="userImage"/>
+	<br/>
+	Content Type: <s:property value="userImageContentType"/>
+	<br/>
+	File Name: <s:property value="userImageFileName"/>
+	<br/>
+	Uploaded Image:
+	<br/>
+	<img src="<s:property value="userImageFileName"/>"/>
 
 </body>
 </html>
