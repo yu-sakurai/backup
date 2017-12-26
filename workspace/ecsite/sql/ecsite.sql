@@ -30,7 +30,7 @@ id int not null primary key auto_increment,
 item_name varchar(30),
 item_price int,
 item_stock int,
-img mediumblob,
+img_path varchar(255),
 insert_date datetime,
 update_date datetime
 );

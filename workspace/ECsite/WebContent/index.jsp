@@ -12,6 +12,10 @@
 		<s:submit value="HOME"/>
 	</s:form>
 
+	<s:form action="TestAction">
+		<s:submit value="TEST"/>
+	</s:form>
+
 
 
 </body>

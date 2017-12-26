@@ -1,0 +1,50 @@
+package com.internousdev.ECsite.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ECsite.util.DBConnector;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class StockUpdateDAO extends ActionSupport implements SessionAware{
+	private DBConnector db=new DBConnector();
+	private Connection con=db.getConnection();
+	public Map<String,Object> session;
+
+	public void stockUpdate(String id,String stock, String buyCount) throws SQLException{
+		int IntItemStock=Integer.parseInt(session.get("item_stock").toString()) ;
+		int IntBuyCount=Integer.parseInt(buyCount);
+		int IntUpdateStock=IntItemStock-IntBuyCount;
+		String sql ="UPDATE item_info_transaction set item_stock=? where id=?";
+
+		try{
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(2,id);
+		ps.setInt(1, IntUpdateStock);
+
+		ps.execute();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			con.close();
+
+		}
+
+	}
+
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+
+
+}

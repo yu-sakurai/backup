@@ -1,0 +1,23 @@
+package com.internousdev.ECsite.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.internousdev.ECsite.util.DBConnector;
+
+public class StockUpdateDAO {
+	private DBConnector db=new DBConnector();
+	private Connection con=db.getConnection();
+
+
+	public void stockUpdate(int id,String count) throws SQLException{
+		String sql ="";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setInt(1,id);
+
+
+	}
+
+
+}

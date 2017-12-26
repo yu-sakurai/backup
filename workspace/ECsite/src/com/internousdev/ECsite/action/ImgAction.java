@@ -17,9 +17,13 @@ public class ImgAction extends ActionSupport implements ServletRequestAware{
 	private HttpServletRequest servletRequest;
 
 	public String execute() {
+
+
 		try {
-			String filePath = servletRequest.getSession().getServletContext().getRealPath("/");
-			System.out.println("Server path:" + filePath);
+
+			String filePath ="C:\\Users\\internousdev\\Desktop\\workspace\\workspace-sakurai\\backup\\backup\\workspace\\ECsite\\WebContent\\img\\";
+					/* servletRequest.getSession().getServletContext().getRealPath("/");*/
+			System.out.println("path:" + filePath);
 			File fileToCreate = new File(filePath, this.userImageFileName);
 
 			FileUtils.copyFile(this.userImage, fileToCreate);

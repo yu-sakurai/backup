@@ -6,11 +6,13 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.ECsite.dao.BuyCompDAO;
+import com.internousdev.ECsite.dao.StockUpdateDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyCompAction extends ActionSupport implements SessionAware{
 	public Map<String, Object> session;
 	private BuyCompDAO buyCompDAO=new BuyCompDAO();
+	private StockUpdateDAO sUDDAO=new StockUpdateDAO();
 
 	public String execute() throws SQLException{
 		String ret=SUCCESS;
@@ -19,6 +21,14 @@ public class BuyCompAction extends ActionSupport implements SessionAware{
 				session.get("id").toString(),
 				session.get("total_price").toString(),
 				session.get("itemCount").toString());
+
+
+
+		sUDDAO.stockUpdate(
+				session.get("id").toString(),
+				session.get("item_stock").toString(),
+				session.get("itemCount").toString());
+
 
 
 
