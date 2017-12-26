@@ -33,7 +33,6 @@ INDEX VERSION 1.127+C:\Users\internousdev\Desktop\workspace\workspace-sakurai\ba
 3792330582.index
 1365378950.index
 1583481756.index
-1909994243.index
 3148193508.index
 2482979802.index
 1090778457.index
